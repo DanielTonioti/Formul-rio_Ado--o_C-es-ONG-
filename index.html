@@ -31,7 +31,7 @@
         </div>
         <div>
             <label for="CidadeUsuario">Qual a sua cidade?</label>
-            <input type="text" placeholder="Cidade - Estado, País" title="Coloque na seguinte formatação: Cidade - Estado, País">
+            <input type="text" placeholder="Cidade - Estado, País" title="Coloque na seguinte formatação: Cidade - Estado, País" required>
         </div>
         <div>
             <label for="Morada">Morada: </label>
@@ -39,21 +39,35 @@
                 <option value="" disabled selected>Selecione uma das opcoes</option>
                 <option value="Casa">Casa</option>
                 <option value="Ap">Apartamento</option>
-            </select>  
+            </select required>  
+        </div>
+        <div class="hidden" id="DivPermissao">
+           <label>O local permite animais de estimação?</label>
+              <label for="PermiteSim">Sim</label>
+                <input type="radio" id="PermiteSim" name="Permite" value=true required><br>
+                <label for="PermiteNao">Nao</label>
+                <input type="radio" id="PermiteNao" name="Permite" value=false required>
         </div>
         <div>
             <label>Possui Quintal?</label><br>
             <label for="QuintalSIm">Sim</label>
-            <input type="radio" id="QuintalSIm" name="Quintal" value=true><br>
+            <input type="radio" id="QuintalSIm" name="Quintal" value=true required><br>
             <label for="QuintalNao">Nao</label>
-            <input type="radio" id="QuintalNao" name="Quintal" value=false>
+            <input type="radio" id="QuintalNao" name="Quintal" value=false required>
+        </div>
+        <div class="hidden" id="DivSeguranca">
+           <label>O quintal é seguro?</label>
+              <label for="SegSim">Sim</label>
+                <input type="radio" id="SegSim" name="Seguranca" value=true required><br>
+                <label for="SegNao">Nao</label>
+                <input type="radio" id="SegNao" name="Seguranca" value=false required>
         </div>
         <div>
             <label>Já teve pet antes?</label><br>
             <label for="PetSim">Sim</label>
-            <input type="radio" id="PetSim" name="Quintal" value=true><br>
+            <input type="radio" id="PetSim" name="Quintal" value=true required><br>
             <label for="PetNao">Nao</label>
-            <input type="radio" id="PetNao" name="Quintal" value=false>
+            <input type="radio" id="PetNao" name="Quintal" value=false required>
         </div>
         <div>
             <label for="PetSozinho">Tempo sozinho: </label>
@@ -61,7 +75,7 @@
         </div>
         <div>
             <label for="MotivoAdocao"></label>
-            <textarea name="MotivoAdocao" id="MotivoAdocao" placeholder="Inserir texto"></textarea>
+            <textarea name="MotivoAdocao" id="MotivoAdocao" placeholder="Inserir texto" minlength="10"></textarea>
         </div>
         <div>
             <input type="checkbox" id="Termos" value="Termos" required>

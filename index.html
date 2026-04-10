@@ -42,6 +42,10 @@
                     maxlength="11" pattern="\d{11}" title="Digite o CPF sem pontos" class="InputsN" required>
             </div>
             <div>
+                <label for="SalarioUsuario">Salário: </label><br>
+                <input type="text" id="SalarioUsuario" placeholder="Ex: 2000" min="1000" class="InputsN">
+            </div>
+            <div>
                 <label for="IdadeUsuario">Idade: </label><br>
                 <input type="number" id="IdadeUsuario" placeholder="Insira em anos" class="InputsN" min="18">
             </div>
@@ -77,6 +81,10 @@
                   <label for="SegSim">Sim</label><br>
                   <input type="radio" name="Quintal" id="SegNao" value=false required>
                     <label for="SegNao">Nao</label>
+            </div>
+            <div>
+                <label for="QuererAnimal">A quantos dias você quer adotar?</label><br>
+                <input type="number" id="QuererAnimal" placeholder="Insira em dias" min="0" class="InputsN">
             </div>
             <div>
                 <label id="PetANTES">Já teve pet antes?</label><br>

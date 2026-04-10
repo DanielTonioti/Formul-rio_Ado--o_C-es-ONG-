@@ -45,16 +45,14 @@ let Morada = document.getElementById("Morada").value;
 let PetANTES = document.querySelector('input[name="Petantes"]:checked').value;
 let PetSozinho = document.getElementById("PetSozinho").value;
 let MotivoAdocao = document.getElementById("MotivoAdocao").value;
+let QuererAnimal = document.getElementById("QuererAnimal").value;
 
-// Se o animal ficar mais de 8 horas sozinho por dia, o sistema deve exibir alert ou colocar justificativa
 if(PetSozinho>8) return alert("O pet nao pode ficar mais de 8 horas sozinho");
-// Caso o candidato nunca tenha tido pet, o sistema deve exibir uma mensagem informando que poderá haver acompanhamento da ONG
 if(PetANTES==="false") return alert("VOcê poderá receber ajuda da ONG");
-// O motivo da adoção não pode ser genérico (ex: "quero", "porque sim")
 if(MotivoAdocao.toLowerCase() === "quero" || MotivoAdocao.toLowerCase() === "porque sim") return alert("O motivo da adoção não pode ser genérico.");
-// O CPF não pode ser duplicado (simular uma lista de CPFs já cadastrados no código)
 let CPFsCadastrados = ["12345678900", "98765432100", "11122233344"];
 if (CPFsCadastrados.includes(CpfUsuario)) return alert("CPF já cadastrado. Por favor, informe um CPF diferente.");
-// Caso o usuário informe que não tem condições financeiras, o envio deve ser bloqueado
+if (QuererAnimal < 2) return alert("Decisão impulsiva");
+
 document.getElementById("Botao").innerHTML="Cadastro realizado com sucesso!<br>" +"Nome" + NomeUsuario;
 });

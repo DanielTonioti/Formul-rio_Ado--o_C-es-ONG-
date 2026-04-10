@@ -1,17 +1,19 @@
 // Essa parte aqui serve para fazer com que os campos apareçam ou desapareçam
 const Morada = document.getElementById("Morada");
-const DivPermissao = document.querySelector("DivPermissao");
-const DivSeguranca = document.querySelector("DivSeguranca");
+const DivPermissao = document.getElementById("DivPermissao"); 
+const DivSeguranca = document.getElementById("DivSeguranca");
 const QuintalSIm = document.getElementById("QuintalSIm");
 const QuintalNao = document.getElementById("QuintalNao");
 const Quintal = document.getElementById("Quintal");
 
 function mostrarPermissao() {
-    if (Morada.value === "Ap") {
+    const valorMorada = Morada.value;
+
+    if (valorMorada === "Ap") {
         DivPermissao.classList.remove("hidden");
         Quintal.classList.add("hidden");
         DivSeguranca.classList.add("hidden");
-    } else if (Morada.value === "Casa") {
+    } else if (valorMorada === "Casa") {
         DivPermissao.classList.add("hidden");
         Quintal.classList.remove("hidden");
         if (QuintalSIm.checked) {
@@ -20,7 +22,6 @@ function mostrarPermissao() {
             DivSeguranca.classList.add("hidden");
         }
     } else {
-        // Esconde tudo se nenhuma opção estiver selecionada
         DivPermissao.classList.add("hidden");
         Quintal.classList.add("hidden");
         DivSeguranca.classList.add("hidden");
@@ -31,6 +32,7 @@ Morada.addEventListener("change", mostrarPermissao);
 QuintalSIm.addEventListener("change", mostrarPermissao);
 QuintalNao.addEventListener("change", mostrarPermissao);
 
+
 //Parte que o Icaro passou em sala
 document.getElementById("FormAdocaoCaes").addEventListener("submit", function (e){
 e.preventDefault();
@@ -40,7 +42,7 @@ let CpfUsuario = document.getElementById("CpfUsuario").value;
 let IdadeUsuario = document.getElementById("IdadeUsuario").value;
 let CidadeUsuario = document.getElementById("CidadeUsuario").value;
 let Morada = document.getElementById("Morada").value;
-let PetANTES = document.getElementById("PetANTES").value;
+let PetANTES = document.querySelector('input[name="Petantes"]:checked').value;
 let PetSozinho = document.getElementById("PetSozinho").value;
 let MotivoAdocao = document.getElementById("MotivoAdocao").value;
 
@@ -54,5 +56,5 @@ if(MotivoAdocao.toLowerCase() === "quero" || MotivoAdocao.toLowerCase() === "por
 let CPFsCadastrados = ["12345678900", "98765432100", "11122233344"];
 if (CPFsCadastrados.includes(CpfUsuario)) return alert("CPF já cadastrado. Por favor, informe um CPF diferente.");
 // Caso o usuário informe que não tem condições financeiras, o envio deve ser bloqueado
-
+document.getElementById("Botao").innerHTML="Cadastro realizado com sucesso!<br>" +"Nome" + NomeUsuario;
 });

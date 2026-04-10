@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,9 +9,9 @@
 <body>
       <header class="header">
   <div class="logo">
-    <img id="icon" src="" alt="Logo">
+    <img id="icon" src="assets/Gato do rock.gif" title="No More Tears">
   </div>
-<h1>ONG</h1>
+<h1>ONG - Me Audota</h1>
   <nav class="nav">
     
     <a href="#">Início</a><br>
@@ -37,8 +38,8 @@
             </div>
             <div>
                 <label for="CpfUsuario">CPF: </label><br>
-                <input type="text" id="cpf" ="cpf" placeholder="00000000000"
-                    maxlength="14" pattern="\d{11}" title="Digite o CPF sem pontos" class="InputsN" required>
+                <input type="text" id="CpfUsuario" placeholder="00000000000"
+                    maxlength="11" pattern="\d{11}" title="Digite o CPF sem pontos" class="InputsN" required>
             </div>
             <div>
                 <label for="IdadeUsuario">Idade: </label><br>
@@ -46,7 +47,7 @@
             </div>
             <div>
                 <label for="CidadeUsuario">Qual a sua cidade?</label><br>
-                <input type="text" placeholder="Cidade - Estado, País" title="Coloque na seguinte formatação: Cidade - Estado, País" class="InputsN" required>
+                <input type="text" id="CidadeUsuario" placeholder="Cidade - Estado, País" title="Coloque na seguinte formatação: Cidade - Estado, País" class="InputsN" required>
             </div>
             <div>
                 <label for="Morada">Morada: </label><br>
@@ -56,7 +57,7 @@
                     <option value="Ap">Apartamento</option>
                 </select required>  
             </div>
-            <div class="hidden" id="divPermissao">
+            <div class="hidden" id="DivPermissao">
                <label>O local permite animais de estimação?</label><br>
                <input type="radio" id="PermiteSim"  value=true required>
                   <label for="PermiteSim">Sim</label><br>
@@ -65,23 +66,23 @@
             </div>
             <div class="hidden" id="Quintal">
                 <label>Possui Quintal?</label><br>
-                <input type="radio" id="QuintalSIm" value=true required>
+                <input type="radio" name="PossuiQuintal" id="QuintalSIm" value=true required>
                 <label for="QuintalSIm">Sim</label><br>
-                <input type="radio" id="QuintalNao" value=false required>
+                <input type="radio" name="PossuiQuintal" id="QuintalNao" value=false required>
                 <label for="QuintalNao">Nao</label>
             </div>
-            <div class="hidden" id="divSeguranca">
+            <div class="hidden" id="DivSeguranca">
                <label>O quintal é seguro?</label><br>
-               <input type="radio" id="SegSim" value=true required>
+               <input type="radio" name="Quintal" id="SegSim" value=true required>
                   <label for="SegSim">Sim</label><br>
                   <input type="radio" name="Quintal" id="SegNao" value=false required>
                     <label for="SegNao">Nao</label>
             </div>
             <div>
                 <label id="PetANTES">Já teve pet antes?</label><br>
-                <input type="radio" id="PetSim" value=true required>
+                <input type="radio" name="Petantes" id="PetSim" value=true required>
                 <label for="PetSim">Sim</label><br>
-                <input type="radio" id="PetNao" value=false required>
+                <input type="radio" name="Petantes" id="PetNao" value=false required>
                 <label for="PetNao">Nao</label>
             </div>
             <div>
@@ -99,8 +100,9 @@
             <div>
     
             </div>
-            <button type="submit" id="Botao">submit</button>
+            <button type="submit" id="submit">submit</button>
             <script src="scripts.js"></script>
+            <div id="Botao"></div>
         </form>
     </main>
     <footer>
